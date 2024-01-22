@@ -7,5 +7,5 @@ Instrucciones:
 Versiones de Tecnologías:
 JDK: 17
 Gradle: 8.4
-Karate: 1.2.0.RC4
 IntelliJ: 2023.3.2
+SerenityBDD con ScreenPlay: Cucumber
