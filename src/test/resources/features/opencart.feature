@@ -8,7 +8,7 @@ Feature: Shop Cart Automatization
     And back to main page
     And select second product
     And select product color
-    Then add product to cart
+    Then add product to cart again
     Then go to shop cart
     And go to checkout
     And select guest checkout
@@ -22,5 +22,5 @@ Feature: Shop Cart Automatization
     And verify order
 
     Examples:
-      | firstname | lastname | email                 | phone       | address1      | city   | cp           |
-      | Elizabeth | Uyaguari | ely.uyaguar@gmail.com | 09083625445 | Orquideas     | Cuenca | 010101       |
+      | firstname | lastname | email                 | phone       | address1  | city   | cp     |
+      | Elizabeth | Uyaguari | ely.uyaguar@gmail.com | 09083625445 | Orquideas | Cuenca | 010101 |

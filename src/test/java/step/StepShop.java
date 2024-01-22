@@ -70,6 +70,13 @@ public class StepShop {
         OnStage.theActorInTheSpotlight().attemptsTo(action);
     }
 
+    @Then("add product to cart again")
+    public void addProductToCartAgain() {
+        Performable action = Click.on(By.cssSelector("#button-cart"));
+        OnStage.theActorInTheSpotlight().attemptsTo(action);
+    }
+
+
     @Then("go to shop cart")
     public void goToShopCart() {
         Performable action = Click.on(By.id("cart-total"));
