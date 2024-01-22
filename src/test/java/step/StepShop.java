@@ -15,26 +15,16 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.Text;
-import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.Wait;
-import org.htmlunit.javascript.host.performance.Performance;
 
 public class StepShop {
 
-    /**
-     * Prepara el escenario para la prueba, configurando actores
-     */
     @Before
     public void init() {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    /**
-     * Abre la pagina principal, espera 5 segundos y se asigna un actor
-     *
-     * @param actor
-     */
     @Given("^(.*) go to main page")
     public void goMainPage(String actor) {
         Wait.until(() -> true).forNoMoreThan(5).seconds();
@@ -85,9 +75,10 @@ public class StepShop {
     }
 
     @And("go to checkout")
-    public void goToCheckout() {
+    public void goToCheckout() throws InterruptedException {
         Performable action = Click.on(By.cssSelector("#content > div.buttons.clearfix > div.pull-right > a"));
         OnStage.theActorInTheSpotlight().attemptsTo(action);
+        Thread.sleep(2000);
     }
 
     @And("select guest checkout")
@@ -108,17 +99,18 @@ public class StepShop {
 
 
     @And("fill out personal information {string}, {string}, {string}, {string}")
-    public void fillOutPersonalInformation(String nombre, String apellido, String correo, String telefono) {
+    public void fillOutPersonalInformation(String nombre, String apellido, String correo, String telefono) throws InterruptedException {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 fillOutInformation(nombre, "input-payment-firstname"),
                 fillOutInformation(apellido, "input-payment-lastname"),
                 fillOutInformation(correo, "input-payment-email"),
                 fillOutInformation(telefono, "input-payment-telephone")
         );
+        Thread.sleep(2000);
     }
 
     @And("fill out address information {string}, {string}, {string}")
-    public void fillOutAddressInformation(String direccion1, String ciudad, String codigoPostal) {
+    public void fillOutAddressInformation(String direccion1, String ciudad, String codigoPostal) throws InterruptedException {
 
         Performable action = SelectFromOptions.byVisibleText("Ecuador").from(By.id("input-payment-country"));
         Performable action2 = SelectFromOptions.byVisibleText("Azuay").from(By.id("input-payment-zone"));
@@ -129,6 +121,7 @@ public class StepShop {
                 action,
                 action2
         );
+        Thread.sleep(2000);
     }
 
     @And("continue to delivery method")
@@ -151,9 +144,10 @@ public class StepShop {
     }
 
     @And("confirm order")
-    public void confirmOrder() {
+    public void confirmOrder() throws InterruptedException {
         Performable action = Click.on(By.id("button-confirm"));
         OnStage.theActorInTheSpotlight().attemptsTo(action);
+        Thread.sleep(2000);
     }
 
     @And("verify order")
