@@ -2,6 +2,7 @@ Conclusiones:
 
 1. Los escenarios definidos en este trabajo estan escritos en el lenguaje  Gherkin de Cucumber, el mismo que permite
 definir pruebas funcionales automatizadas en lenguaje natural de manera que sean comprensibles para cualquier persona.
-2. Serenity BDD permite ejecutar multiples acciones dentro de un mismo paso y gracias a esto se puede agrupar
+2. Serenity BDD permite ejecutar multiples acciones dentro de un mismo paso y gracias a esto se puede agrupar según las
+ diferentes fases.
 3. Uno de los grandes beneficios de Serenity es que permite la reutilización de acciones en cualquier parte del escenario
 4. Se tiene como resultados del Test: 1 escenario con 18 pasos, todos aprobados.
